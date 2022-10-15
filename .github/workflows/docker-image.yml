@@ -17,7 +17,7 @@ jobs:
     - name: Build the Docker image
       run: |  
        docker build -t 996830/hello_world_fastapi .
-       docker login -u ${{ secrets.DOCKER_HUB_USERNAME }} -p ${{secrets.DOCKER_HUB_ACCESS_TOKEN}}
+       echo ${{secrets.DOCKER_HUB_ACCESS_TOKEN}} -u ${{ secrets.DOCKER_HUB_USERNAME }} --password-stdin
        docker push 996830/hello_world_fastapi
       
   
